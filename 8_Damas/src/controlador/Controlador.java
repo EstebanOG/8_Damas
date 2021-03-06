@@ -22,6 +22,7 @@ public class Controlador implements ActionListener{
     public Controlador(Vista vista, Modelo modelo){
         this.vista = vista;
         this.modelo = modelo;
+        this.vista.pSuperior.btnIniciar.addActionListener(this);
     }
     
     public void iniciar(){
@@ -32,7 +33,10 @@ public class Controlador implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        modelo.setPosicionInicial(vista.pTablero.getCasillaSeleccionada());
+        modelo.llamaBT();
+        vista.pTablero.setSolucionTablero(modelo.getX());
+        vista.pTablero.ubicarNumeros();
     }
     
 }

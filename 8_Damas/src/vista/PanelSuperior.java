@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  */
 public class PanelSuperior extends JPanel{
     private JLabel lSuperior;
-    private JButton btnIniciar;
+    public JButton btnIniciar;
     
     public PanelSuperior(){
         this.setBounds(0, 0, 800, 100);

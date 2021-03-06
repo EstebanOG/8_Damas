@@ -15,9 +15,10 @@ import javax.swing.JPanel;
 public class Vista extends JFrame {
 
     private JPanel pPrincipal;
-    private PanelSuperior pSuperior;
+    public PanelSuperior pSuperior;
     private PanelInferior pInferior;
-    private PanelTablero pTablero;
+    public PanelTablero pTablero;
+    
 
     public Vista() {
         this.setBounds(0, 0, 800, 638);
@@ -41,7 +42,7 @@ public class Vista extends JFrame {
 
         pTablero = new PanelTablero();
         pPrincipal.add(pTablero);
-
+        
         pPrincipal.repaint();
     }
 }
