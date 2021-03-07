@@ -16,7 +16,7 @@ public class Vista extends JFrame {
 
     private JPanel pPrincipal;
     public PanelSuperior pSuperior;
-    private PanelInferior pInferior;
+    public PanelInferior pInferior;
     public PanelTablero pTablero;
     
 

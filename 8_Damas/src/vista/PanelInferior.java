@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  */
 public class PanelInferior extends JPanel{
     private JLabel lInferior;
-    private JButton btnBorrar;
+    public JButton btnBorrar;
     
     public PanelInferior(){
         this.setBounds(0, 500, 800, 100);
@@ -27,7 +27,7 @@ public class PanelInferior extends JPanel{
     private void initComponents(){
         lInferior = new JLabel("Rb Db");
         lInferior.setBounds(380, 20, 40, 60);
-        lInferior.setFont(new Font("Agency FB", Font.BOLD, 60));
+        lInferior.setFont(new Font("Arial", Font.BOLD, 60));
         this.add(lInferior);
         
         btnBorrar = new JButton();

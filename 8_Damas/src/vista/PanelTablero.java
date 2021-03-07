@@ -7,6 +7,7 @@ package vista;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,6 +44,7 @@ public class PanelTablero extends JPanel implements ActionListener {
                 casilla[i][j] = new JButton();
                 casilla[i][j].setBorder(bordeDefault);
                 casilla[i][j].setPreferredSize(new Dimension(20, 20));
+                casilla[i][j].setFont(new Font("Arial", Font.BOLD, 30));
                 if ((i + j + 1) % 2 == 0) {
                     casilla[i][j].setBackground(new Color(153, 204, 255));
                 }
@@ -69,6 +71,8 @@ public class PanelTablero extends JPanel implements ActionListener {
     }
 
     private void encontrarPosicionInicial() {
+
+        //Encontrar posición de la casilla seleccionada
         for (int i = 0; i < casilla.length; i++) {
             for (int j = 0; j < casilla[i].length; j++) {
                 if (casilla[i][j].equals(btnSeleccionado)) {
@@ -86,20 +90,29 @@ public class PanelTablero extends JPanel implements ActionListener {
     public Integer[] getCasillaSeleccionada() {
         return casillaSeleccionada;
     }
-    
-    public void ubicarNumeros(){
-        System.out.println(Arrays.toString(solucionTablero));
-        for(int i = 0; i<solucionTablero.length;i++){
-            casilla[i][solucionTablero[i]].setText(i+1+"");
+
+    public void ubicarNumeros() {
+
+        // Ubicar numeros en el tablero
+        casilla[casillaSeleccionada[0]][casillaSeleccionada[1]].setText(1 + "");
+        int n = 2;
+        for (int i = 0; i < solucionTablero.length; i++) {
+
+            if (i != casillaSeleccionada[0]) {
+                casilla[i][solucionTablero[i]].setText(n + "");
+                n++;
+            }
+
         }
-//        for (int i = 0; i < casilla.length; i++) {
-//            for (int j = 0; j < casilla[i].length; j++) {
-//                if (casilla[i][j].equals(btnSeleccionado)) {
-//                    casillaSeleccionada[0] = i;
-//                    casillaSeleccionada[1] = j;
-//                }
-//            }
-//        }
+    }
+    
+    public void limpiarTablero(){
+        //Encontrar posición de la casilla seleccionada
+        for (int i = 0; i < casilla.length; i++) {
+            for (int j = 0; j < casilla[i].length; j++) {
+                casilla[i][j].setText("");
+            }
+        }
     }
 
 }

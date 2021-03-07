@@ -27,7 +27,7 @@ public class PanelSuperior extends JPanel{
     private void initComponents(){
         lSuperior = new JLabel("Rn Dn");
         lSuperior.setBounds(380, 20, 40, 60);
-        lSuperior.setFont(new Font("Agency FB", Font.BOLD, 60));
+        lSuperior.setFont(new Font("Arial", Font.BOLD, 60));
         this.add(lSuperior);
         
         btnIniciar = new JButton();
