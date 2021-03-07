@@ -18,6 +18,8 @@ public class Vista extends JFrame {
     public PanelSuperior pSuperior;
     public PanelInferior pInferior;
     public PanelTablero pTablero;
+    private PanelNumerosCeldas pNumeros;
+    private PanelLetrasCeldas pLetras;
     
 
     public Vista() {
@@ -42,6 +44,12 @@ public class Vista extends JFrame {
 
         pTablero = new PanelTablero();
         pPrincipal.add(pTablero);
+        
+        pNumeros = new PanelNumerosCeldas();
+        pPrincipal.add(pNumeros);
+        
+        pLetras= new PanelLetrasCeldas();
+        pPrincipal.add(pLetras);
         
         pPrincipal.repaint();
     }
